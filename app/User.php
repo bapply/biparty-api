@@ -28,4 +28,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
     ];
+
+    public function invitations()
+    {
+        return $this->hasMany(Invitation::class);
+    }
 }

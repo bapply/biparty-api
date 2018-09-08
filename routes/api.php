@@ -15,4 +15,5 @@ use Illuminate\Http\Request;
 
 Route::prefix('v1')->group(function () {
     Route::resource('/login', 'Auth\LoginController', ['only' => 'index']);
+    Route::resource('/invitations', 'InvitationController', ['only' => 'store']);
 });
