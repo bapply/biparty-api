@@ -7,6 +7,9 @@ import (
 
 func main() {
 	router := gin.Default()
-	router.GET("/v1/user", controllers.CreateUser)
+	v1 := router.Group("/v1")
+	{
+		v1.GET("/users", controllers.CreateUser)
+	}
 	router.Run()
 }
